@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "nohup node run &"
+    "start": "node run"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

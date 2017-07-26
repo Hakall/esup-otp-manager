@@ -15,6 +15,7 @@ var properties = require(__dirname + '/../properties/properties');
 
 var port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
+console.log("Port: " + port);
 
 /**
  * Create HTTP server.
@@ -26,7 +27,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, process.env.IP);
 var api_sockets = require('../client/sockets');
 var sockets = require('./sockets');
 sockets.attach(server);
