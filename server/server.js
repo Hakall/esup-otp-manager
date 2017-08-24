@@ -13,7 +13,7 @@ var properties = require(__dirname + '/../properties/properties');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '4000');
+var port = normalizePort(properties.esup.port || process.env.PORT || '4000');
 app.set('port', port);
 console.log("Port: " + port);
 
