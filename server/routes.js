@@ -8,13 +8,14 @@ var passport;
 
 function requesting(req, res, opts) {
     console.log("requesting api");
-    console.log(opts.method +':'+ opts.url);
-    console.log(req.session.passport);
+    //console.log(opts.method +':'+ opts.url);
+    //console.log(req.session.passport);
     request(opts, function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var infos = JSON.parse(body);
             if(req.session.passport.user.uid)infos.uid = req.session.passport.user.uid;
             infos.api_url = properties.esup.api_url;
+            //console.log(infos)
             res.send(infos);
         } else res.send({
             "code": "Error",
