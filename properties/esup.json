@@ -1,7 +1,7 @@
 {
     "CAS": {
         "version": "CAS1.0",
-        "ssoBaseURL": "http://localhost/cas",
+        "ssoBaseURL": "http://localhost:8080/cas",
         "serverBaseURL": "http://localhost:4000/"
     },
     "port": "",
@@ -9,8 +9,8 @@
     "api_password":"changeit",
     "users_secret":"changeit",
     "session_secret_key": "changeit",
-    "admins": ["john"],
-    "managers": ["paul"],
+    "admins": ["admin"],
+    "managers": ["admin"],
     "dev": {},
     "#how_to":"Usually CAS works in Secure mode, so ssBaseURL must be a HTTPS url"
 }

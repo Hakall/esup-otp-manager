@@ -5,7 +5,7 @@ script#user-dashboard(type='text/x-template').
     <div class='switch'>
     <label>
     {{messages.api.action.deactivate}}
-    <input type='checkbox' v-if="user.methods[method.name].active" v-on:click="deactivate" v-bind:name=method.name checked>
+    <input type='checkbox' v-if="user.methods[method.name].active || show" v-on:click="deactivate" v-bind:name=method.name checked>
     <input type='checkbox' v-on:click="activate" v-bind:name=method.name v-else>
     <span class='lever'></span> {{messages.api.action.activate}}
     </label>

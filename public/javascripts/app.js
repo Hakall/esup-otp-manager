@@ -243,11 +243,12 @@ var UserDashboard = Vue.extend({
         'methods': Object,
         'user': Object,
         'currentmethod': String,
-        'get_user': Function
+        'get_user': Function,
     },
     data: function () {
         return {
-            "switchPushEvent": MouseEvent
+            "switchPushEvent": MouseEvent,
+            "show":false,
         }
     },
     components: {
@@ -259,6 +260,7 @@ var UserDashboard = Vue.extend({
     template: "#user-dashboard",
     created: function () {
     },
+
     methods: {
         activate: function (event) {
             switch (event.target.name) {
@@ -295,6 +297,14 @@ var UserDashboard = Vue.extend({
                         this.user.methods.push.activationCode = data.activationCode;
                         this.user.methods.push.qrCode = data.qrCode;
                         this.user.methods.push.api_url = data.api_url;
+
+                        event.target.checked = true;
+                        this.show = true;
+                        console.log("activate:----------",data.activated);
+                        console.log(this.user.methods[event.target.name].active);
+                        console.log(data);
+                        Materialize.toast('changed', 3000, 'green darken-1');
+                        
                     }else Materialize.toast('Erreur interne, veuillez réessayer plus tard.', 3000, 'red darken-1');
                 }.bind(this),
                 error: function (xhr, status, err) {
@@ -383,7 +393,19 @@ var UserDashboard = Vue.extend({
                         event.target.checked = true;
                         Materialize.toast('Erreur interne, veuillez réessayer plus tard.', 3000, 'red darken-1');
                     }
-                    else this.user.methods[event.target.name].active = false;
+                    else {
+                        this.user.methods[event.target.name].active = false;
+
+                        if(this.show){
+                            this.user.methods.push.activationCode = null;
+                            this.user.methods.push.qrCode = null;
+                            this.user.methods.push.api_url = null;
+                            this.show = false;
+                        }
+
+                        console.log("deactivate:----------");
+                        console.log(this.user.methods[event.target.name].active);
+                    }
                 }.bind(this),
                 error: function (xhr, status, err) {
                     event.target.checked = true;
@@ -482,6 +504,7 @@ var UserView = Vue.extend({
                 cache: false,
                 success: function (data) {
                     if (data.code == "Ok") {
+                        event.target.checked = true;
                         this.user.methods.push.activationCode = data.activationCode;
                         this.user.methods.push.qrCode = data.qrCode;
                         this.user.methods.push.api_url = data.api_url;
