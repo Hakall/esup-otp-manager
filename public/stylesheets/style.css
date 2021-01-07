@@ -46,39 +46,39 @@ footer {
 
 nav,
 .side-nav .collapsible-body li.active {
-    background-color: #424242 !important;
+    background-color: #424242;
 }
 
 .side-nav .collapsible-body li.active,
 .side-nav.fixed .collapsible-body li.active {
-    background-color: #26a69a !important;
+    background-color: #26a69a;
 }
 
 .btn,
 .btn-large {
-    background-color: #757575 !important;
+    background-color: #757575;
 }
 
 .sidenav-header {
-    background-image: url("../images/wallpaper_polygons.jpg") !important;
+    background-image: url("../images/wallpaper_polygons.jpg");
     background-size: 150% 500%;
     background-repeat: no-repeat;
-    color: white !important;
+    color: white;
 }
 
 .sidenav-header a {
-    background-color: #424242 !important;
-    color: white !important;
-    height: initial !important;
-    line-height: initial !important;
+    background-color: #424242;
+    color: white;
+    height: initial;
+    line-height: initial;
 }
 .sidenav-header #closebtn {
-    background-color: rgba(76, 175, 80, 0) !important;
-    color: white !important;
-    height: initial !important;
+    background-color: rgba(76, 175, 80, 0);
+    color: white;
+    height: initial;
     text-align: right;
     font-size: 21px;
-    line-height: initial !important;
+    line-height: initial;
     margin: 0px 0 32px 74px;
 }
 
@@ -180,5 +180,44 @@ body.IE7 .Switch.Round {
 }
 
 #closebtn{
+    float: right;
+}
+
+/* Ajustement css Double Authentification sur l’ENT : esup-otp-manager.univ-paris1.fr - nov 2020 */
+
+#app nav,
+#app .side-nav .collapsible-body li.active {
+    background: #727780;
+}
+
+#app nav,
+#app nav .nav-wrapper i,
+#app nav a.button-collapse,
+#app nav a.button-collapse i {
+    height: 44px;
+    line-height: 44px;
+}
+
+#app .top-nav {
+    font-size: 24px;
+}
+
+#app h4 {
+    font-size: 2rem; color:#666;
+}
+#app.btn, #app.btn-large {
+    background-color: #727780;
+}
+#app.red.darken-1 {
+         background-color: #d93600;
+}
+/* Langues */
+#app .collapsible-header i {
+    text-align: left;
+    color: #727780;
+}
+/* bouton supp */
+#app .row .col.s12 {
+    width: 41.6666666667%;
     float: right;
 }
