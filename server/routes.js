@@ -115,13 +115,13 @@ function routing() {
         requesting(req, res, opts);
     });
 
-    router.get('/api/messages', isUser, function(req, res) {
+    router.get('/api/messages', function(req, res) {
         var lang = req.acceptsLanguages('fr', 'en');
-	if(lang) {
-	    res.json(require("../properties/messages_" + lang + ".json")); 
-	} else {
-	    res.json(require("../properties/messages.json"));
-	}
+        if(lang) {
+            res.json(require("../properties/messages_" + lang + ".json")); 
+        } else {
+            res.json(require("../properties/messages.json"));
+        }
     });
 
     router.get('/api/messages/:language', isUser, function(req, res) {
