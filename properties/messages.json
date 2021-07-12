@@ -18,7 +18,7 @@
             "totp": {
                 "name": "Timed password",
                 "description": "This method generate 6 numerals codes",
-                "howTo": "Push 'Generate QrCode ', then scan the code using your Google Authenticator app (iOS and Android) or + Authenticator (Windows Phone) or enter the code directly into the application"
+                "howTo": "Push 'Generate QrCode ', then scan the code using your Google Authenticator app (iOS and Android) or enter the code directly into the application"
             },
             "random_code": {
                 "name": "One time password",
@@ -37,7 +37,7 @@
             },
             "push": {
                 "name": "Notification",
-                "description": "Method for connecting via smartphone notifications",
+                "description": "Method for connecting via smartphone notifications with Esup Auth",
                 "push_confirmation1": "Please scan this code in the smartphone application",
                 "push_confirmation2": "If your smartphone does not have a functional picture appreil or you are having difficulties to scan the code above. Go to the menu \"Settings \" then click \"Activate without scan \".",
                 "push_confirmation3": "Enter you login :",
